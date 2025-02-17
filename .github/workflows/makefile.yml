@@ -58,11 +58,13 @@ jobs:
         working-directory: openwrt
         run: make download -j8
 
-      - name: Build Package
-        working-directory: openwrt
-        run: |
-          make package/luci-app-ikoolproxy/compile V=s -j$(nproc)
-
+      - name: Building packages
+        uses: sbwml/openwrt-gh-action-sdk@main
+        env:
+          ARCH: ${{ matrix.arch }}-openwrt-25.03
+          FEEDNAME: packages_ci
+          PACKAGES: luci-app-ikoolproxy
+          NO_REFRESH_CHECK: true
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
