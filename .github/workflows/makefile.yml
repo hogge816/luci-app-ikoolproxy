@@ -61,7 +61,7 @@ jobs:
       - name: Building packages
         uses: sbwml/openwrt-gh-action-sdk@main
         env:
-          ARCH: ${{ matrix.arch }}-openwrt-25.03
+          ARCH: ${{ matrix.arch }}-openwrt-23.05
           FEEDNAME: packages_ci
           PACKAGES: luci-app-ikoolproxy
           NO_REFRESH_CHECK: true
