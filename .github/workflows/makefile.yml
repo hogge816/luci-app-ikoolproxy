@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/upload-artifact@v4.6.0
+    # actions/checkout@main
+    
 
     - name: Setup Build Environment
       run: |
